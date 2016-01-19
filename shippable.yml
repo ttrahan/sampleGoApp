@@ -7,7 +7,7 @@ env:
   global:
     - GAE_DIR=/tmp/go_appengine
     - EMAIL=tom@shippable.com
-    - secure: IMFg4A0ZoenXh3OHNGRgZg86CAmPm1FXR/aQrjq3nuqL+R7Jq9YunNLLw5uOt2OpzzAGUMEcBrHRuCl5q5+/3gaIVR5Zshpjx7mYhtonomLJsCDSN9rEIEp1kfHh2EcEhZuwY8rTPsbfHTkg+gteCSQCvOq3fUMlIv8u0L5Hy25aRSuHMTU5xS/pr79Y0iseRUo09b++WVR3iiclm9SiX+wFhU6qVacZbDckXAuBKDoD8nGFUjzdtzeKuiFwr6hi+nRMv6TTgM6yErAtwwvBG1cLPaOOx8a8KCMWEZ+PAG7y+OBA8pMDN+l2xYSFl5By1EzNYbXYXg3/vBo+PUEVqQ==
+    - secure: Eu8VFgg02Munw2X5Yp2/TF9px5wJP7j+euOHPfVRcCJRdYBfkWJAQdyzyMZJ6ybf7ulpY6WNYYDnCXhNudswTXVw9eApAGotkD9qaQ0GV0QcYG+NmA/qNcPIDOY3WodnYq5mKYbwjsrw+CrWH224d+pgPzEchBs3/EaWncVRqU2D5B9XhYVu77R6PZd0YeN+ORrCgShC2mm64KxrOgxPIw7FkZR5m24fjkBhUJm7mesk8sWluE0qhMMh1Nlgq4ZSBT6lIbI4VjLe4W6EAdMP1EMEmrXmaRqjF3nrZSS4/AHq7NnxS2SOgKUTOW66PTIvytP6d3f1o00X5ZVPmSNNEg==
 
 before_install:
   - >
@@ -26,7 +26,7 @@ before_script:
 
 script:
   - >
-    $GAE_DIR/goapp test -v -coverprofile=shippable/codecoverage/coverage.out github.com/Shippable/sample-go-datastore-appengine/hello |
+    $GAE_DIR/goapp test -v -coverprofile=shippable/codecoverage/coverage.out github.com/ttrahan/sampleGoApp/hello |
       $GOPATH/bin/go-junit-report > shippable/testresults/results.xml
   - $GOPATH/bin/gocover-cobertura < shippable/codecoverage/coverage.out > shippable/codecoverage/coverage.xml
 

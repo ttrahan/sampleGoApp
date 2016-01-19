@@ -5,10 +5,10 @@ import (
     "net/http"
 )
 
-func init() {
-    http.HandleFunc("/", handler)
-}
+// func init() {
+//     http.HandleFunc("/", Handler)
+// }
 
-func handler(w http.ResponseWriter, r *http.Request) {
+func Handler(w http.ResponseWriter, r *http.Request) {
     fmt.Fprint(w, "Hello, world!")
 }
