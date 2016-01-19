@@ -17,7 +17,7 @@ before_install:
      unzip /tmp/gae.zip -d /tmp)
   - go get github.com/jstemmer/go-junit-report
   - go get github.com/t-yuki/gocover-cobertura
-  - mkdir -p $GOPATH/src/github.com/Shippable
+  - mkdir -p $GOPATH/src/github.com/ttrahan
   - ln -sfn $PWD $GOPATH/src/github.com/ttrahan/sampleGoApp
 
 before_script:
@@ -26,7 +26,7 @@ before_script:
 
 script:
   - >
-    $GAE_DIR/goapp test -v -coverprofile=shippable/codecoverage/coverage.out github.com/ttrahan/sampleGoApp/hello |
+    $GAE_DIR/goapp test -v -coverprofile=ttrahan/codecoverage/coverage.out github.com/ttrahan/sampleGoApp/hello |
       $GOPATH/bin/go-junit-report > shippable/testresults/results.xml
   - $GOPATH/bin/gocover-cobertura < shippable/codecoverage/coverage.out > shippable/codecoverage/coverage.xml
 
