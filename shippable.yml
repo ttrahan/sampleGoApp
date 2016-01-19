@@ -21,4 +21,4 @@ before_install:
   - ln -sfn $PWD $GOPATH/src/github.com/ttrahan/sampleGoApp
 
 after_success:
-  - echo "$GAE_PASSWORD" | $GAE_DIR/appcfg.py -e "$EMAIL" --passin update .
+  - $GAE_DIR/appcfg.py update $GOPATH/src/github.com/ttrahan/sampleGoApp 
