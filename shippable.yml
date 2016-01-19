@@ -10,6 +10,7 @@ env:
     - secure: Eu8VFgg02Munw2X5Yp2/TF9px5wJP7j+euOHPfVRcCJRdYBfkWJAQdyzyMZJ6ybf7ulpY6WNYYDnCXhNudswTXVw9eApAGotkD9qaQ0GV0QcYG+NmA/qNcPIDOY3WodnYq5mKYbwjsrw+CrWH224d+pgPzEchBs3/EaWncVRqU2D5B9XhYVu77R6PZd0YeN+ORrCgShC2mm64KxrOgxPIw7FkZR5m24fjkBhUJm7mesk8sWluE0qhMMh1Nlgq4ZSBT6lIbI4VjLe4W6EAdMP1EMEmrXmaRqjF3nrZSS4/AHq7NnxS2SOgKUTOW66PTIvytP6d3f1o00X5ZVPmSNNEg==
 
 before_install:
+  - echo $GOPATH
   - >
     test -e $GAE_DIR ||
     (mkdir -p $GAE_DIR &&
@@ -19,6 +20,9 @@ before_install:
   - go get github.com/t-yuki/gocover-cobertura
   - mkdir -p $GOPATH/src/github.com/ttrahan
   - ln -sfn $PWD $GOPATH/src/github.com/ttrahan/sampleGoApp
+
+script:
+  - true
 
 after_success:
   - goapp deploy -application idyllic-tendril-94023 $GOPATH/src/github.com/ttrahan/sampleGoApp/hello/app.yaml
