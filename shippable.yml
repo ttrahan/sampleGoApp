@@ -18,11 +18,12 @@ before_install:
   - go get github.com/jstemmer/go-junit-report
   - go get github.com/t-yuki/gocover-cobertura
   - mkdir -p $GOPATH/src/github.com/ttrahan
+  - echo $PWD
   - ln -sfn $PWD $GOPATH/src/github.com/ttrahan/sampleGoApp
 
 before_script:
-  - mkdir -p /home/shippable/testresults
-  - mkdir -p /home/shippable/codecoverage
+  - mkdir -p $PWD/shippable/testresults
+  - mkdir -p $PWD/shippable/codecoverage
 
 script:
   - >
