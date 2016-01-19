@@ -27,8 +27,8 @@ before_script:
 script:
   - >
     $GAE_DIR/goapp test -v -coverprofile=ttrahan/codecoverage/coverage.out github.com/ttrahan/sampleGoApp/hello |
-      $GOPATH/bin/go-junit-report > shippable/testresults/results.xml
-  - $GOPATH/bin/gocover-cobertura < shippable/codecoverage/coverage.out > shippable/codecoverage/coverage.xml
+      $GOPATH/bin/go-junit-report > $GOPATH/src/github.com/ttrahan/sampleGoApp/shippable/testresults/results.xml
+  - $GOPATH/bin/gocover-cobertura < $GOPATH/src/github.com/ttrahan/sampleGoApp/shippable/codecoverage/coverage.out > shippable/codecoverage/coverage.xml
 
 after_success:
   - echo "$GAE_PASSWORD" | $GAE_DIR/appcfg.py -e "$EMAIL" --passin update .
