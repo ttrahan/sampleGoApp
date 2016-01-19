@@ -25,4 +25,4 @@ script:
   - true
 
 after_success:
-  - goapp deploy -application idyllic-tendril-94023 $GOPATH/src/github.com/ttrahan/sampleGoApp/hello/app.yaml
+  - $GAE_DIR/goapp deploy -application idyllic-tendril-94023 $GOPATH/src/github.com/ttrahan/sampleGoApp/hello/app.yaml
