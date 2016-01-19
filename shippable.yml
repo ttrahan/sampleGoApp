@@ -21,4 +21,4 @@ before_install:
   - ln -sfn $PWD $GOPATH/src/github.com/ttrahan/sampleGoApp
 
 after_success:
-  - $GAE_DIR/appcfg.py update $GOPATH/src/github.com/ttrahan/sampleGoApp 
+  - goapp deploy -application idyllic-tendril-94023 $GOPATH/src/github.com/ttrahan/sampleGoApp/hello/app.yaml

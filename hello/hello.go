@@ -2,7 +2,7 @@ package hello
 
 import (
     "fmt"
-    "../routes"
+    "../routes.go"
 )
 
 // func init() {
